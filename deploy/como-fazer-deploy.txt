@@ -1,0 +1,88 @@
+#<ABRA O PROJETO>
+
+Ctrl+j --> abre o terminal
+
+Na pagina do github, clica em criar novo repositorio [+](canto superior direito)
+
+Em "repository name* -> crie no nome do repositorio
+
+clicar em --> [create repository]
+
+#<NO TERMINAL SIGA ESSES PASSOS NA ORDEM>:
+
+git init  [Enter]
+git add . [Enter]
+git commit -m "digite aqui o que está sendo enviado" [Enter]
+git branch -M main
+git remote add origin https://github.com/jhorgeluiz/Via-cep-fortaleza-CE.git [Enter]
+git push -u origin main  [Enter]
+
+#<ATUALIZA A PAGINA DO GITHUB E VERÁ OS ARQUIVOS ENVIADOS>
+
+#<AINDA NO TERMINAL>
+npm i gh-pages --save-dev [Enter]
+
+#NA PASTA "PACKAGE.JSON" (ACRESCENTA TRES FUNCOES)
+
+{
+  "homepage": "https://jhorgeluiz.github.oi/nomedorepositorio",  <--acrescenta
+  "name": "via-cep",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+    "predeploy": "npm run build",  <--acrescenta
+    "deploy": "gh-pages -d dist",  <--acrescenta
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "eslint": "^9.13.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "globals": "^15.11.0",
+    "vite": "^5.4.10"
+  }
+}
+
+#NA PASTA "VITE.CONFIG.JS" (ACRESCENTA UMA FUNCÃO)
+
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  base: "/nome_do_repositorio",   <--acrescenta
+})
+
+
+#NOVAMENTE NO TERMINAL
+
+git commit -a -m "configuracoes de deploy"  [Enter]
+
+git push  [Enter]
+
+npm run deploy  [Enter]
+
+OBS:tem que aparecer "Published"
+
+#NA PAGINA DO GITHUB
+
+entra no repositorio
+settings(configuraçoes)
+pages
+espera uns 3 minutos
+atualiza a pagina
+aparecerá o link da hospedagens
