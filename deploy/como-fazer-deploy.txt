@@ -85,4 +85,4 @@ settings(configuraçoes)
 pages
 espera uns 3 minutos
 atualiza a pagina
-aparecerá o link da hospedagens
+aparecerá o link da hospedagens.
