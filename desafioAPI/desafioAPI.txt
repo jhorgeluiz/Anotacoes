@@ -34,7 +34,7 @@ function App() {
         <div class="input-group mb-3">
           <input type="text" class="form-control" value={campo} onChange={(e) => setCampo(e.target.value)} />
           <button class="btn btn-outline-secondary" type="button" onClick={buscar} >Buscar</button>
-        </div>
+        </div >
 
       </main>
     </>
