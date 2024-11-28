@@ -11,7 +11,7 @@ git push origin main
 npm run deploy
 
 Vá até o repositório no GitHub:
-Clique em Settings > Pages e confirme o status do deploy.
+Clique em Settings > Pages e confirme o status do deploy
 Teste o Site Online:
 
 Acesse o link gerado pelo GitHub Pages (algo como https://seu-usuario.github.io/nome-do-repositorio).
