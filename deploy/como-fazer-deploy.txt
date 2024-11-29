@@ -1,4 +1,4 @@
-#<ABRA O PROJETO>
+# <ABRA O PROJETO>
 
 Ctrl+j --> abre o terminal
 
