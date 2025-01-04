@@ -1,6 +1,5 @@
 Atualização de Deploy
 
-
 Commit das Alterações no Repositório:
 
 git add .
