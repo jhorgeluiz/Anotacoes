@@ -15,4 +15,4 @@ Clique em Settings > Pages e confirme o status do deploy
 Teste o Site Online:
 
 Acesse o link gerado pelo GitHub Pages (algo como https://seu-usuario.github.io/nome-do-repositorio).
-xx̌xx
+
