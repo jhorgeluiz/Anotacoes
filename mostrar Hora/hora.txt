@@ -13,5 +13,4 @@ console.log(
 
 hhhhhhhhh
 llllllllll
-ǰjjjjjjjjjj
 
