@@ -4,8 +4,7 @@ Esse método recarrega a página atual,
 como se o usuário tivesse pressionado o botão
 de recarregar no navegador.
 
-cccc
-fffffff
+
 
 
 <!DOCTYPE html>
