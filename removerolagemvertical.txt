@@ -1,0 +1,10 @@
+html, body {
+    height: 100vh; /* Ocupa toda a altura da tela */
+    overflow: hidden; /* Remove a rolagem vertical */
+}
+
+
+container_principal {
+    height: 100vh; /* Ocupa toda a altura da tela */
+    overflow: hidden; /* Remove a rolagem vertical */
+}
