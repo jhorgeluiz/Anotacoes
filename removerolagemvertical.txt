@@ -1,10 +1,21 @@
+ROLAGEM VERTICAL
+
 html, body {
     height: 100vh; /* Ocupa toda a altura da tela */
     overflow: hidden; /* Remove a rolagem vertical */
 }
 
-
 container_principal {
     height: 100vh; /* Ocupa toda a altura da tela */
     overflow: hidden; /* Remove a rolagem vertical */
 }
+
+
+ROLAGEM HORIZONTAL
+
+html, body {
+    overflow-x: hidden; /* Impede a rolagem horizontal */
+    width: 100vw; /* Garante que a largura seja fixa */
+}
+
+tambem no container container_principal
