@@ -12,6 +12,6 @@ console.log( )
 console.log( )
 
 
-oooooooooo
+
 hhhhhhhhhh
 llllllllllll
