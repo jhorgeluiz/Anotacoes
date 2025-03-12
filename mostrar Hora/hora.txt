@@ -13,6 +13,5 @@ console.log( )
 
 
 sssss
-kjjjkkjjk
 assddss
 
