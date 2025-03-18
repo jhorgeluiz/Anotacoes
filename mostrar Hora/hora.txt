@@ -13,4 +13,3 @@ console.log( )
 
 ffff
 dddd
-aaaaa
