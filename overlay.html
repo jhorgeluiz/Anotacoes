@@ -61,12 +61,12 @@ Aqui está um exemplo de como você pode fazer isso: -->
     </style>
 </head>
 <body>
-    <div id="telaPrincipal">
+    <div id="telaPrincipal"> // todo o conteudo tem que ficar dentro de um container geral
         <h1>Tela Principal</h1>
         <button onclick="openModal()">Abrir Modal</button>
     
     
-        <div id="overlay" class="overlay"></div>
+        <div id="overlay" class="overlay"></div> // o overlay tem que ficar fora ta tela principal
         
         <div id="modal" class="modal">
             <div class="modal-content">
@@ -84,7 +84,7 @@ Aqui está um exemplo de como você pode fazer isso: -->
     // Exibe a sobreposição
     document.getElementById('overlay').style.display = 'block';
     // Torna a tela principal "inativa" ao diminuir a opacidade
-    document.getElementById('telaPrincipal').style.opacity = '0.5';
+    document.getElementById('telaPrincipal').style.opacity = '1'; // opacidade 1, fica perfeito
     document.getElementById('telaPrincipal').style.pointerEvents = 'none'; // Desabilita as interações
 }
 
