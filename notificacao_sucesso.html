@@ -1,1 +1,39 @@
+<style>
+  .sucesso {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #00000033;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+  }
+  .sucesso.show {
+      opacity: 1;
+      transform: translateY(0);
+  }
+</style>
 
+
+<!-- html -->
+<div id="sucesso" class="sucesso"></div>
+
+
+
+<script>
+  // Exibir mensagem de sucesso
+  function showSucesso(msg) {
+      const sucesso = document.getElementById('sucesso');
+      sucesso.innerText = msg;
+      sucesso.classList.add('show');
+  
+      setTimeout(() => {
+          sucesso.classList.remove('show');
+      }, 5000);
+  }
+</script>
