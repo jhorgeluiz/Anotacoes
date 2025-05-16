@@ -1,0 +1,274 @@
+@charset "UTF-8";
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    
+}
+
+h3 {
+    font-size: 25px;
+    margin: 0px;
+    text-align: center;
+    color: #003366;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 15px;
+    border: 1px solid #c7c7c7;
+}
+
+label {
+    font-size: 14px;
+    color:#003366;
+}
+
+input, select{
+    text-align: center;
+    padding: 5px;
+    width: 80px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+input:focus, select:focus {
+    outline-color:  #003366;
+}
+
+.container_codigo_cod_barras {
+    border: 1px solid #ebebeb;
+    margin-top: 5px;
+    padding: 5px;
+    display: flex;
+    gap: 30px;
+}
+
+.container_unid_categoria_desc {
+    border: 1px solid #ebebeb;
+    margin-top: 5px;
+    padding: 5px;
+    display: flex;
+    gap: 30px;
+}
+
+.cliente_banco {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+p {
+    margin: 0px;
+}
+
+.container_tabela {
+    border: 1px solid black;
+    height: 300px; 
+    width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+table {
+    border-collapse: collapse;
+}
+tbody {
+    font-size: 14px;
+}
+th {
+    background-color: darkgray;
+    border: 1px solid black;
+    font-size: 14px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+td {
+    border: 1px solid black;
+    
+}
+
+.desc {
+    width: 600px;
+}
+.fich {
+    width: 250px;
+}
+.fornec {
+    
+    width: 400px;
+}
+.acoes {
+    width: 100px;
+}
+.categ {
+    width: 150px;
+}
+.cod_tabela {
+    width: 80px;
+}
+.cod_barra_tabela {
+    width: 130px;
+}
+.uni_tabela {
+    width: 80px;
+}
+
+
+/* input */
+.nome {
+    width: 600px;
+}
+
+.ncm {
+    width: 100px;
+}
+
+.unidade {
+    width: 100px;
+}
+.categoria {
+    width: 188px;
+}
+
+.fornecedor {
+    width: 500px;
+}
+
+.codigo_barra {
+    width: 150px;
+}
+
+.imagem { /* ficheiro */
+    
+    font-size: 10px;
+    width: 230px;
+    padding: 0px;
+}
+
+.container_editar_excluir {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+}
+.btn_editar {
+    background-color: #003366;
+    color: #ffffff;
+    border-style: none;
+    cursor: pointer;
+    padding: 1px;
+    font-size: 10px;
+    border-radius: 3px;
+    margin: 2px;
+}
+
+.btn_excluir {
+    background-color: red;
+    color: #ffffff;
+    border-style: none;
+    cursor: pointer;
+    padding: 1px;
+    font-size: 10px;
+    border-radius: 3px;
+    margin: 2px;
+}
+
+.btn_adicionar{
+    background-color: #003366;
+    color: #ffffff;
+    border-style: none;
+    border-radius: 4px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.btn_salvar {
+    background-color: #003366;
+    color: #ffffff;
+    border-style: none;
+    border-radius: 4px;
+    width: 100px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+.substituicao_tributaria {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+}
+
+img {
+    width: 20px;
+}
+
+footer {
+    border: 1px solid #ebebeb;
+    margin-top: 5px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn_footer, .novo_produto {
+    background-color: #003366;
+    color: #ffffff;
+    border-style: none;
+    border-radius: 4px;
+    box-shadow: 0.5px 0.5px 3px black;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 5px;
+    padding: 2px;
+}
+
+.modal_entrada_completa {
+    display: none;
+    background-color: #d9e6ef;
+    box-shadow: 0.5px 0.5px 5px black;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 30px;
+    text-align: center;
+}
+
+/* inicio modal sair */
+.modal_confirm {
+    display: none;
+    background-color: #d9e6ef;
+    box-shadow: 0.5px 0.5px 5px black;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 30px;
+    align-items: center;
+    flex-direction: column;
+}
+.container_btn {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+}
+.btn_sair,.btn_cancel {
+    background-color: #003366;
+    color: white;
+    gap: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+/* fim modal sair */
