@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+body {
+    background-color: #d9e6ef;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    color: #003366;
+    margin-top: 10px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 55%;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0000001a;
+}
+
+.data {
+    color: #003366;
+    width: 120px;
+}
+
+.container_btn_nome_prod{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.nome {
+    width: 400px;
+}
+
+#resultados {
+    position: absolute;
+    background-color: #d9e6ef;
+    color: #003366;
+    width: 400px;
+    
+}
+
+label {
+    font-size: 13px;
+    color: #003366;
+    display: block;
+}
+
+input {
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+input:focus {
+    outline: none;
+}
+
+.container_data-nome {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.container_desc {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.container_desc input {
+    width: 600px;
+}
+
+.container_estoques {
+    justify-content: space-between;
+    width: 85%;
+    gap: 10px;
+    display: flex;
+    border: 1px solid #e2e2e2;
+    padding: 5px;
+}
+.container_precos {
+    justify-content: space-between;
+    width: 85%;
+    gap: 10px;
+    display: flex;
+    border: 1px solid #e2e2e2;
+    padding: 5px;
+}
+
+p {
+    color: #003366;
+    font-weight: bold;
+    margin: 10px 0px 0px 0px;
+}
+
+img {
+    width: 20px;
+}
+
+footer {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.btn_voltar, .btn_cancelar, .btn_salvar, .btn_buscar {
+    background-color: #003366;
+    border-style: none;
+    border-radius: 5px;
+    box-shadow: 0.5px 0.5px 3px black;
+    padding: 8px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}

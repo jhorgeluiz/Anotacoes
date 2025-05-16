@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Preço de Venda</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .container {
+            max-width: 350px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #resultado {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Calculadora de Preço de Venda</h2>
+        
+        <label for="precoCusto">Preço de Custo (R$):</label>
+        <input type="number" id="precoCusto" placeholder="Digite o preço de custo">
+
+        <label for="margemLucro">Margem de Lucro (%):</label>
+        <input type="number" id="margemLucro" placeholder="Digite a margem de lucro">
+
+        <label for="descontoAtacado">Desconto para Atacado (%):</label>
+        <input type="number" id="descontoAtacado" placeholder="Digite o desconto para atacado">
+
+        <button onclick="calcularPrecoVenda()">Calcular</button>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function calcularPrecoVenda() {
+            let precoCusto = parseFloat(document.getElementById("precoCusto").value);
+            let margemLucro = parseFloat(document.getElementById("margemLucro").value);
+            let descontoAtacado = parseFloat(document.getElementById("descontoAtacado").value);
+
+            if (isNaN(precoCusto) || isNaN(margemLucro) || isNaN(descontoAtacado)) {
+                document.getElementById("resultado").innerHTML = "Por favor, insira valores válidos.";
+                return;
+            }
+
+            // Calcula o preço de venda normal
+            let precoVenda = precoCusto * (1 + margemLucro / 100);
+
+            // Calcula o preço de atacado aplicando o desconto
+            let precoAtacado = precoVenda * (1 - descontoAtacado / 100);
+
+            document.getElementById("resultado").innerHTML = `
+                <p>Preço de Venda: <strong>R$ ${precoVenda.toFixed(2)}</strong></p>
+                <p>Preço de Atacado: <strong>R$ ${precoAtacado.toFixed(2)}</strong></p>
+            `;
+        }
+
+        // Capturar evento "Enter" nos campos de entrada
+        let inputs = document.querySelectorAll("input");
+        inputs.forEach(input => {
+            input.addEventListener("keydown", function(event) {
+                if (event.key === "Enter") calcularPrecoVenda();
+            });
+        });
+    </script>
+
+</body>
+</html>

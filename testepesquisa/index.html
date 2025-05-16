@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrada Simples</title>
+    <link rel="shortcut icon" href="../img/logo4.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <form action="pesquisa.php" method="POST" id="formulario">
+        <h1>Entrada Simples</h1>
+        
+        <section class="container_data-nome">
+            <div>
+                <label for="data_entrada">Data da Entrada <br>
+                    <input class="data" type="text" id="data_entrada" name="data_entrada"  required readonly> <br>
+                </label>
+            </div> 
+            <div class="container_btn_nome_prod">
+                <label for="codigo">Nome do Produto <br>
+                    <input class="nome" type="text" id="nome" name="nome" onkeyup="pesquisarProduto()" required autocomplete="off">
+                    <div id="resultados"></div>
+                </label>
+
+                <div>
+                    <button class="btn_buscar" type="button" onclick="buscarProduto()"><img src="../img/btn_pesq.png" alt=""> Buscar</button>
+                </div>
+            </div>
+        </section>
+
+        <p>Estoque</p>
+        <section class="container_estoques">
+            <div>
+                <label for="quantidade">Quantidade <br>
+                    <input type="number" id="quantidade" name="quantidade" disabled required>
+                </label>
+            </div>
+            <div>
+                <label for="estoque_atual">Estoque Atual <br>
+                    <input type="number" id="estoque_atual" name="estoque_atual" disabled>
+                </label>
+            </div>
+        </section>
+        <p>Preço</p>
+        <section class="container_precos">
+            <div>
+                <label for="novo_preco">Novo Preço <br>
+                    <input type="number" id="novo_preco" name="novo_preco" step="0.01" disabled required>
+                </label>
+            </div>
+            <div>
+                <label for="preco_atual">Preço Atual <br>
+                    <input type="number" id="preco_atual" name="preco_atual" step="0.01" disabled>
+                </label>
+            </div>
+        </section>
+
+        <footer>
+            <button class="btn_voltar" onclick="Voltar_Home()"><img src="../img/btn_voltar.png" alt="">Voltar</button>
+            <button class="btn_salvar" type="submit"><img src="../img/btn_visto.png" alt="">Salvar</button>
+            <button class="btn_cancelar" onclick="Cancelar()"><img src="../img/btn_cancel.png" alt=""> Cancelar</button>
+        </footer>
+    </form>
+
+    
+    <script>
+        
+        function buscarProduto() {
+            const nome = document.getElementById("nome").value;
+
+            // Fazer uma requisição para buscar o produto
+            fetch(`pesquisa.php?nome=${nome}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('estoque_atual').value = data.produto.estoque;
+                    document.getElementById('preco_atual').value = data.produto.preco;
+                    document.getElementById('quantidade').disabled = false;
+                    document.getElementById('novo_preco').disabled = false;
+                } else {
+                    alert('Produto não encontrado!');
+                }
+            });
+        }
+
+        
+
+        // pesquisa o nome do produto
+        async function pesquisarProduto() {
+            let termo = document.getElementById("nome").value;
+            if (termo.length < 1) {
+                document.getElementById("resultados").innerHTML = "";
+                return;
+            }
+
+            try {
+                let response = await fetch("pesquisa.php?q=" + encodeURIComponent(termo));
+                let data = await response.text();
+                document.getElementById("resultados").innerHTML = data;
+            } catch (error) {
+                console.error("Erro ao buscar produtos:", error);
+            }
+            
+        }
+
+        function selecionarProduto(produto) {
+            document.getElementById("nome").value = produto
+            document.getElementById("resultados").innerHTML = ""
+        }
+
+        
+
+        function Voltar_Home() {
+            window.location.href = '../home.php'
+        }
+
+        function Cancelar() {
+            window.location.reload()
+        }
+
+        //data automatica
+        let data = new Date();
+        let dia = data.getDate().toString().padStart(2, '0');
+        let mes = (data.getMonth() + 1).toString().padStart(2, '0');
+        let ano = data.getFullYear();
+        document.getElementById('data_entrada').value = `${ano}-${mes}-${dia}`;
+    </script>
+</body>
+</html>
