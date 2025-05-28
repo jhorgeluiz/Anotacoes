@@ -18,6 +18,7 @@ de recarregar no navegador.
     <button id="reloadButton">Atualizar Página</button>
 
     <script
+
         document.getElementById('reloadButton').addEventListener('click', function() {
             location.reload(); // Recarrega a página
         });
