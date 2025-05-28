@@ -20,6 +20,7 @@ de recarregar no navegador.
     <script
 
 
+
         document.getElementById('reloadButton').addEventListener('click', function() {
             location.reload(); // Recarrega a página
         });
