@@ -25,5 +25,6 @@ de recarregar no navegador.
             location.reload(); // Recarrega a página
         });
     </script>
+
 </body>
 </html>
