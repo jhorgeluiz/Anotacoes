@@ -21,6 +21,7 @@ de recarregar no navegador.
 
 
 
+
         document.getElementById('reloadButton').addEventListener('click', function() {
             location.reload(); // Recarrega a página
         });
