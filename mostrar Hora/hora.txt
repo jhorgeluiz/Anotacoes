@@ -1,4 +1,4 @@
-⁹
+
 function hora() {
     let data = new Date()
 
@@ -11,7 +11,7 @@ console.log(hora())
 console.log( )
 
 
-j
+jo
 
 
 
