@@ -1,0 +1,31 @@
+<style>
+  .container_3btn {
+    display: flex;
+    margin: 4px 0px ;
+  }
+  .voltar, .cadastrar, .limpar {
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid #ccc;
+    background-color: #d9e6ef;
+  }
+  .voltar {background-color: #0078FF;}
+  .voltar:hover {background-color: #016fec;}
+  .cadastrar {background-color: #23A847;}
+  .cadastrar:hover {background-color: #1f943e;}
+  .limpar {background-color: #19A1B5;}
+  .limpar:hover {background-color: #158c9e;}
+</style>
+
+
+<div class="container_3btn">
+  <button class="voltar" onclick="window.location.href='../home.php'"><img class="ico_btn" src="../img/btn_voltarB.png" alt="">Voltar</button>
+  <button class="cadastrar" type="submit" onclick="cadastrarCliente_J(event)"><img class="ico_btn" src="../img/btn_vistoB.png" alt="">Cadastrar</button>
+  <button class="limpar" onclick="Limpar_J()"><img class="ico_btn" src="../img/btn_limparB.png" alt="">Limpar</button>
+</div>
