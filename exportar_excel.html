@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cancelar Venda por Cupom</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+  
+  <button onclick="exportarParaCSV()">Exportar para CSV</button>
+
+ <script>
+   function exportarParaCSV() {
+      const tabela = document.querySelector(".container_tabela table");
+      let csv = "";
+    
+      const linhas = tabela.querySelectorAll("tr");
+    
+      linhas.forEach((linha) => {
+        const colunas = linha.querySelectorAll("th, td");
+        const dados = [];
+    
+        colunas.forEach((coluna) => {
+          let texto = coluna.textContent.trim();
+          // Escapa aspas e separa por vírgula
+          texto = '"' + texto.replace(/"/g, '""') + '"';
+          dados.push(texto);
+        });
+    
+        csv += dados.join(",") + "\n";
+      });
+    
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+    
+      link.setAttribute("href", url);
+      link.setAttribute("download", "cupons_cancelados.csv");
+      link.style.display = "none";
+    
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+   </script>
+</body>
+</html>
