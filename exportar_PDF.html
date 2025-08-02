@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cancelar Venda por Cupom</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+
+  <button onclick="exportarPDF()">Exportar Tabela em PDF</button>
+
+
+
+  
+<script>
+  function exportarPDF() {
+      const { jsPDF } = window.jspdf; // Acesso ao construtor jsPDF
+
+      const doc = new jsPDF({
+        orientation: 'landscape',
+        unit: 'pt',
+        format: 'A4'
+      });
+
+      doc.setFontSize(16);
+      doc.text("Relatório de Cupons Cancelados", 40, 40);
+
+      doc.autoTable({
+        html: 'table',   // <-- pega o table do html
+        startY: 60,
+        theme: 'striped',
+        headStyles: {
+          fillColor: [52, 73, 94],
+          textColor: 255,
+          fontStyle: 'bold',
+        },
+        styles: {
+          fontSize: 10,
+          cellPadding: 4,
+        },
+        didDrawPage: function (data) {
+          doc.setFontSize(10);
+          doc.text("Emitido em: " + new Date().toLocaleString(), 40, doc.internal.pageSize.height - 10);
+        }
+      });
+
+      doc.save("cupons_cancelados.pdf");
+    }
+  </script>
+</body>
+</html>
